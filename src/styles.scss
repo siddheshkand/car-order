@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~node_modules/bootstrap/scss/bootstrap";
+
+$font-family-sans-serif: Gotham Book;
+$font-size-base: 1.5rem;
+
+#mainnav {
+  .navbar-brand {
+    margin-right: 3rem;
+  }
+
+  .nav-item {
+    margin: 0 2rem;
+
+    &.active {
+      border-bottom: 4px solid $primary;
+      margin-bottom: -4px;
+    }
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  color: white;
+  min-height: 100px;
+
+  code {
+    color: white !important;
+    font-size: 1rem;
+  }
+
+}
