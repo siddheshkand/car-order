@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-9 text-center">
+    <img src="{{car.order.engine.image}}" alt="" width="300">
+  </div>
+  <div class="col-3">
+    <button *ngFor="let engine of car.model.engines"
+            [class]="'btn btn-block btn-' + (car.order.engine === engine ?'primary' : 'secondary')"
+            (click)="car.order.engine = engine">
+      {{engine.name}}
+    </button>
+  </div>
+</div>
