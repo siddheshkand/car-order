@@ -24,7 +24,12 @@ export class SummaryComponent implements OnInit {
   }
 
   get totalPrice() {
-    return this.car.model.base_price + this.car.order.engine.price;
+    let autopilot_cost = 0;
+    if (this.car.order.autopilot) {
+      autopilot_cost = 1000;
+    }
+
+    return this.car.model.base_price + this.car.order.engine.price + this.car.order.wheel.price + this.car.order.interior.price + autopilot_cost;
   }
 
   goNext() {

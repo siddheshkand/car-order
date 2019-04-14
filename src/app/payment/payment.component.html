@@ -1,3 +1,44 @@
-<p>
-  payment works!
-</p>
+<div style="max-width: 800pt;" class="pl-4">
+  <h2 class="display-4 mt-4 mb-4">Finish your order</h2>
+  <form [formGroup]="form" novalidate>
+    <div class="row">
+      <div class="col">
+        <label>First name</label>
+        <input formControlName="firstname" type="text" class="form-control">
+        <span class="text-danger"
+              *ngIf="form.controls.firstname.invalid && (form.controls.firstname.touched ||form.controls.firstname.dirty)">
+          This field is required
+        </span>
+      </div>
+      <div class="col">
+        <label>Last name</label>
+        <input formControlName="lastname" type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label>Email </label>
+        <input formControlName="email" type="email" class="form-control">
+      </div>
+      <div class="col">
+        <label>Phone</label>
+        <input formControlName="phone" type="number" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+        <label>Credit Card</label>
+        <input formControlName="card_number" type="number" class="form-control">
+      </div>
+      <div class="col-4">
+        <label>Card Date</label>
+        <input formControlName="card_date" type="date" class="form-control">
+      </div>
+    </div>
+  </form>
+
+  <strong>{{form.valid |json}}</strong>
+  {{form.value |json}}
+</div>
+
+

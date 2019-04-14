@@ -1,0 +1,8 @@
+<div>
+  <app-color-bar [value]="r" (valueChange)="r=$event; update()"></app-color-bar>
+  <app-color-bar [value]="g" (valueChange)="g=$event; update()"></app-color-bar>
+  <app-color-bar [value]="b" (valueChange)="b=$event; update()"></app-color-bar>
+  R = {{r}}
+  G = {{g}}
+  B = {{b}}
+</div>

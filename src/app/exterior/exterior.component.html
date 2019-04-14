@@ -3,13 +3,15 @@
     <app-preview></app-preview>
   </div>
   <div class="col-3">
-    Select Color : TODO
+    Select Color :
+    <app-colorpick [(color)]="car.order.exterior_color"
+    ></app-colorpick>
     <hr>
     Select Wheels :
 
     <button *ngFor="let wheels of car.model.wheels"
-            (click)='car.order.wheels=wheels'
-            [class]="'ml-2 btn btn-'+(car.order.wheels==wheels ? 'primary':'secondary')">
+            (click)='car.order.wheel=wheels'
+            [class]="'ml-2 btn btn-'+(car.order.wheel==wheels ? 'primary':'secondary')">
       {{wheels.name}}
     </button>
   </div>

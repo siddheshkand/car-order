@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CarService} from '../car.service';
 
 @Component({
   selector: 'app-preview',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public car: CarService) {
+  }
 
   ngOnInit() {
   }
 
+  get selectedWheelsLayer() {
+    return this.car.model.wheels.find((wh) => {
+      return wh === this.car.order.wheel;
+    }).image;
+  }
 }

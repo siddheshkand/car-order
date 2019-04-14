@@ -1,6 +1,17 @@
-import {Engine, Wheel} from './car';
+import {Engine, Interior, Wheel} from './car';
 
 export interface Order {
   engine: Engine;
-  wheels: Wheel;
+  wheel: Wheel;
+  exterior_color: string; // wil be in hex format
+  interior: Interior;
+  autopilot: Boolean;
+
+  firstname: string;
+  lastname: string;
+  phone: string;
+  email: string;
+  card_name: string;
+  card_date: string;
+
 }

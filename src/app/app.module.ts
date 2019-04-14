@@ -12,6 +12,10 @@ import {PaymentComponent} from './payment/payment.component';
 import {SummaryComponent} from './summary/summary.component';
 import {PreviewComponent} from './preview/preview.component';
 import {enableProdMode} from '@angular/core';
+import {ColorpickComponent} from './colorpick/colorpick.component';
+import {BarComponent} from './colorpick/bar/bar.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FeildErrorComponent } from './feild-error/feild-error.component';
 
 const appRoutes: Routes = [
   {path: 'engine', component: EngineComponent},
@@ -32,11 +36,16 @@ const appRoutes: Routes = [
     PaymentComponent,
     SummaryComponent,
     PreviewComponent,
+    ColorpickComponent,
+    BarComponent,
+    FeildErrorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [CarService],
   bootstrap: [AppComponent]
