@@ -30,9 +30,12 @@ export class SummaryComponent implements OnInit {
   goNext() {
     // this.router.navigate(['/exterior']);
     const ind = NAVIGATION.findIndex((i) => i === this.router.url);
-    if (ind < NAVIGATION.length) {
+    if (ind < NAVIGATION.length - 1) {
+      console.log(ind, NAVIGATION.length);
       const nextUrl = NAVIGATION[ind + 1];
       this.router.navigate([nextUrl]);
+    } else {
+      alert('Now Submit order');
     }
   }
 }

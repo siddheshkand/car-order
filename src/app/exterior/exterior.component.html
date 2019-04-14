@@ -2,5 +2,15 @@
   <div class="col-9">
     <app-preview></app-preview>
   </div>
-  <div class="col-3"></div>
+  <div class="col-3">
+    Select Color : TODO
+    <hr>
+    Select Wheels :
+
+    <button *ngFor="let wheels of car.model.wheels"
+            (click)='car.order.wheels=wheels'
+            [class]="'ml-2 btn btn-'+(car.order.wheels==wheels ? 'primary':'secondary')">
+      {{wheels.name}}
+    </button>
+  </div>
 </div>

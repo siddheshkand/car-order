@@ -10,7 +10,8 @@ import {InteriorComponent} from './interior/interior.component';
 import {AutopilotComponent} from './autopilot/autopilot.component';
 import {PaymentComponent} from './payment/payment.component';
 import {SummaryComponent} from './summary/summary.component';
-import { PreviewComponent } from './preview/preview.component';
+import {PreviewComponent} from './preview/preview.component';
+import {enableProdMode} from '@angular/core';
 
 const appRoutes: Routes = [
   {path: 'engine', component: EngineComponent},
