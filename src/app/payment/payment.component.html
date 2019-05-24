@@ -1,3 +1,4 @@
+<!--suppress HtmlFormInputWithoutLabel -->
 <div style="max-width: 800pt;" class="pl-4">
   <h2 class="display-4 mt-4 mb-4">Finish your order</h2>
   <form [formGroup]="form" novalidate>
@@ -5,40 +6,59 @@
       <div class="col">
         <label>First name</label>
         <input formControlName="firstname" type="text" class="form-control">
-        <span class="text-danger"
-              *ngIf="form.controls.firstname.invalid && (form.controls.firstname.touched ||form.controls.firstname.dirty)">
+        <app-feild-error [field]="form.controls.firstname">
           This field is required
-        </span>
+        </app-feild-error>
       </div>
       <div class="col">
         <label>Last name</label>
         <input formControlName="lastname" type="text" class="form-control">
+        <app-feild-error [field]="form.controls.lastname">
+          This field is required
+        </app-feild-error>
       </div>
     </div>
     <div class="row">
       <div class="col">
         <label>Email </label>
         <input formControlName="email" type="email" class="form-control">
+        <app-feild-error [field]="form.controls.email">
+          This field is required
+        </app-feild-error>
       </div>
       <div class="col">
         <label>Phone</label>
         <input formControlName="phone" type="number" class="form-control">
+        <app-feild-error [field]="form.controls.phone">
+          This field is required
+        </app-feild-error>
       </div>
     </div>
     <div class="row">
       <div class="col-8">
         <label>Credit Card</label>
         <input formControlName="card_number" type="number" class="form-control">
+        <app-feild-error [field]="form.controls.card_number">
+          This field is required
+        </app-feild-error>
+        <span *ngIf="form.controls.email.errors ">
+          Enter email in proper format
+        </span>
       </div>
       <div class="col-4">
         <label>Card Date</label>
         <input formControlName="card_date" type="date" class="form-control">
+        <app-feild-error [field]="form.controls.card_date">
+          This field is required
+        </app-feild-error>
       </div>
     </div>
   </form>
 
-  <strong>{{form.valid |json}}</strong>
-  {{form.value |json}}
+  <!--<strong>{{form.valid |json}}</strong>-->
+  <!--{{form.value |json}}-->
+  <!--<hr>-->
+  <!--{{car.order | json}}-->
 </div>
 
 

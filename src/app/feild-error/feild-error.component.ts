@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-feild-error',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeildErrorComponent implements OnInit {
 
-  constructor() { }
+  @Input() field: FormControl;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

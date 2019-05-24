@@ -33,6 +33,12 @@ export class CarService {
       exterior_color: '#ffaa00',
       interior: this.model.interiors[0],
       autopilot: true,
+      firstname: '',
+      lastname: '',
+      phone: '',
+      email: '',
+      card_name: '',
+      card_date: '',
     };
   }
 }
